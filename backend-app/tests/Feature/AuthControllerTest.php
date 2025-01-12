@@ -23,10 +23,6 @@ class AuthControllerTest extends TestCase
         $user = User::factory()->create([
             'email' => 'optimum7@example.com',
             'password' => bcrypt('password'),
-            'access_token' => Str::random(32),
-            'client_id' => Str::random(32),
-            'client_secret' => Str::random(32),
-            'store_hash' => Str::random(10),
         ]);
 
         // Make login request with valid credentials

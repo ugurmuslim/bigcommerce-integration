@@ -17,11 +17,14 @@ class CategoryResource extends JsonResource
         return  [
             'id' => $this->id,
             'name' => $this->name,
+            'description' => $this->description,
+            'parentId' => $this->parent_id,
             'products' => $this->products->map(function ($product) {
                 return [
                     'id' => $product->id,
                     'name' => $product->name,
                     'price' => $product->price,
+
                 ];
             }),
         ];
