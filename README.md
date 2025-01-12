@@ -48,7 +48,6 @@ docker-compose up --build
 2. Run `docker-compose exec optimum7-app php artisan app:project-init` to make the project ready.
 
 ```sh
-docker-compose exec optimum7-app composer install
 docker-compose exec optimum7-app php artisan app:project-init
 ```
 
