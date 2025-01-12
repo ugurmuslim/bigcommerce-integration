@@ -87,7 +87,7 @@ onMounted(() => {
     <button
       @click="syncData"
       class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
-      Sync Data
+      Sync Categories and Products
     </button>
     <table class="table-auto w-full border-collapse border border-gray-300">
       <thead>
