@@ -60,7 +60,7 @@ docker-compose exec app php artisan test
 And then you can access the project at [http://localhost:8080](http://localhost:8080)
 
 
-## What can be done furthermore
+## What can be done better
 
 - Add some webhooks to update already created products
 - While syncing products and variants, there can be failures so a backup plan would be nice.  

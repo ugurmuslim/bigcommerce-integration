@@ -1,27 +1,28 @@
 version: '3'
 services:
-  vue-app:
+  optimum7-vue-app:
     build:
       context: frontend-app
       dockerfile: Dockerfile
     working_dir: /app
-    container_name: vue-app
+    container_name: optimum7-vue-app
     ports:
       - "8080:8080"
     volumes:
       - ./frontend-app:/app
+      - /app/node_modules
     environment:
       - NODE_ENV=development
     networks:
       - optimum7
 
   #PHP Service
-  app:
+  optimum7-app:
     build:
       context: backend-app
       dockerfile: Dockerfile
     image: digitalocean.com/php
-    container_name: app
+    container_name: optimum7-app
     restart: unless-stopped
     tty: true
     environment:
@@ -31,6 +32,7 @@ services:
     volumes:
       - ./backend-app/:/var/www
       - ./backend-app/docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - /var/www/vendor
     networks:
       - optimum7
     command: /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
@@ -52,9 +54,9 @@ services:
       - optimum7
 
   #MySQL Service
-  db:
+  optimum7-db:
     image: 'bitnami/mysql:latest'
-    container_name: db
+    container_name: optimum7-db
     restart: unless-stopped
     tty: true
     ports:
