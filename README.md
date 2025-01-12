@@ -45,10 +45,11 @@ After project deployment you should see the following page when logged in.
 docker-compose up --build
 ```
 
-2. Run `docker-compose exec app php artisan app:project-init` to make the project ready.
+2. Run `docker-compose exec optimum7-app php artisan app:project-init` to make the project ready.
 
 ```sh
-docker-compose exec app php artisan app:project-init
+docker-compose exec optimum7-app composer install
+docker-compose exec optimum7-app php artisan app:project-init
 ```
 
 3. You can run tests if you like.
