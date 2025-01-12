@@ -32,6 +32,11 @@ You can register new shops and they will be created with same access token as th
 
 Env file is already in the repository for ease of use.
 
+After project deployment you should see the following page when logged in.
+
+![Categories page](backend-app/project-interface.png)
+
+
 ## Installation
 
 1. Run `docker-compose up --build ` to start the containers.
