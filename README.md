@@ -65,4 +65,4 @@ And then you can access the project at [http://localhost:8080](http://localhost:
 - Add some webhooks to update already created products
 - While syncing products and variants, there can be failures so a backup plan would be nice.  
 - Add more features like updating products, categories and variants
-
+- There is a sync button but there is a possibility schedule-syncs and manual sync would run at the same time and create duplicate data so some locking system would be the best.

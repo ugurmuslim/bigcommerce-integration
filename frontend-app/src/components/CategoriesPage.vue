@@ -44,6 +44,7 @@ const fetchCategories = async (page = 1) => {
     }
 
     if (!response.ok) {
+      toast.error('Failed to fetch categories. Perhaps the project is not initialized', {position: 'top-right'});
       throw new Error('Failed to fetch categories');
     }
 

@@ -18,5 +18,22 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->api([ResponseWrapper::class]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        $exceptions->respond(function ($response) {
+            if ($response instanceof JsonResponse) {
+                if ($response->getStatusCode() === 500) {
+                    return response()->json([
+                        'message' => 'An error occurred, please try again later.',
+                    ], 500);
+                }
+            } else {
+                if ($response->getStatusCode() === 500) {
+                    return response()->json([
+                        'message' => 'An error occurred, please try again later.',
+                    ], 500);
+                }
+            }
+
+
+            return $response;
+        });
     })->create();
