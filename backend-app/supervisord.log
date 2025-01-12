@@ -1,0 +1,62 @@
+2025-01-12 06:40:59,553 INFO supervisord started with pid 1
+2025-01-12 06:41:00,555 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EACCES
+2025-01-12 06:41:01,557 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EACCES
+2025-01-12 06:41:03,559 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EACCES
+2025-01-12 06:41:06,562 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EACCES
+2025-01-12 06:41:06,562 INFO gave up: laravel-scheduler_00 entered FATAL state, too many start retries too quickly
+2025-01-12 06:42:07,213 INFO supervisord started with pid 7
+2025-01-12 06:42:08,214 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EACCES
+2025-01-12 06:42:09,216 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EACCES
+2025-01-12 06:42:11,220 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EACCES
+2025-01-12 06:42:14,224 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EACCES
+2025-01-12 06:42:14,225 INFO gave up: laravel-scheduler_00 entered FATAL state, too many start retries too quickly
+2025-01-12 06:44:56,795 WARN received SIGQUIT indicating exit request
+2025-01-12 06:45:08,481 INFO supervisord started with pid 1
+2025-01-12 06:45:09,483 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EACCES
+2025-01-12 06:45:10,485 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EACCES
+2025-01-12 06:45:12,488 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EACCES
+2025-01-12 06:45:15,492 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EACCES
+2025-01-12 06:45:15,492 INFO gave up: laravel-scheduler_00 entered FATAL state, too many start retries too quickly
+2025-01-12 06:45:16,493 WARN received SIGQUIT indicating exit request
+2025-01-12 06:47:16,462 INFO supervisord started with pid 1
+2025-01-12 06:47:17,463 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EISDIR
+2025-01-12 06:47:18,465 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EISDIR
+2025-01-12 06:47:20,467 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EISDIR
+2025-01-12 06:47:23,471 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EISDIR
+2025-01-12 06:47:23,471 INFO gave up: laravel-scheduler_00 entered FATAL state, too many start retries too quickly
+2025-01-12 06:47:34,756 INFO supervisord started with pid 7
+2025-01-12 06:47:35,758 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EISDIR
+2025-01-12 06:47:36,760 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EISDIR
+2025-01-12 06:47:38,764 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EISDIR
+2025-01-12 06:47:41,767 INFO spawnerr: unknown error making dispatchers for 'laravel-scheduler_00': EISDIR
+2025-01-12 06:47:41,767 INFO gave up: laravel-scheduler_00 entered FATAL state, too many start retries too quickly
+2025-01-12 06:49:56,431 INFO supervisord started with pid 1
+2025-01-12 06:49:57,433 INFO spawned: 'laravel-scheduler_00' with pid 8
+2025-01-12 06:49:58,556 INFO success: laravel-scheduler_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-01-12 06:50:30,793 INFO supervisord started with pid 15
+2025-01-12 06:50:31,798 INFO spawned: 'laravel-scheduler_00' with pid 21
+2025-01-12 06:50:32,908 INFO success: laravel-scheduler_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-01-12 06:52:48,842 INFO supervisord started with pid 40
+2025-01-12 06:52:49,847 INFO spawned: 'laravel-scheduler_00' with pid 46
+2025-01-12 06:52:50,960 INFO success: laravel-scheduler_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-01-12 06:55:13,882 INFO supervisord started with pid 125
+2025-01-12 06:55:14,887 INFO spawned: 'laravel-scheduler_00' with pid 131
+2025-01-12 06:55:16,000 INFO success: laravel-scheduler_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-01-12 06:55:49,252 WARN received SIGQUIT indicating exit request
+2025-01-12 06:55:49,252 INFO waiting for laravel-scheduler_00 to die
+2025-01-12 06:55:49,261 WARN stopped: laravel-scheduler_00 (terminated by SIGTERM)
+2025-01-12 06:56:43,676 INFO supervisord started with pid 1
+2025-01-12 06:56:44,681 INFO spawned: 'laravel-scheduler_00' with pid 7
+2025-01-12 06:56:45,838 INFO success: laravel-scheduler_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-01-12 07:01:06,781 INFO supervisord started with pid 1
+2025-01-12 07:01:07,786 INFO spawned: 'laravel-scheduler_00' with pid 7
+2025-01-12 07:01:08,938 INFO success: laravel-scheduler_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-01-12 07:01:57,988 WARN received SIGQUIT indicating exit request
+2025-01-12 07:01:57,988 INFO waiting for laravel-scheduler_00 to die
+2025-01-12 07:01:57,994 WARN stopped: laravel-scheduler_00 (terminated by SIGTERM)
+2025-01-12 07:02:05,686 INFO supervisord started with pid 1
+2025-01-12 07:02:06,689 INFO spawned: 'laravel-scheduler_00' with pid 7
+2025-01-12 07:02:07,830 INFO success: laravel-scheduler_00 entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-01-12 07:04:05,247 WARN received SIGQUIT indicating exit request
+2025-01-12 07:04:05,248 INFO waiting for laravel-scheduler_00 to die
+2025-01-12 07:04:05,250 WARN stopped: laravel-scheduler_00 (terminated by SIGTERM)

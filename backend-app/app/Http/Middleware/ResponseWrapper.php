@@ -19,6 +19,7 @@ class ResponseWrapper
     {
         $response = $next($request);
 
+        if($request->is('api/*')) {
         if ($response instanceof JsonResponse) {
             $data = $response->getData(true);
         } else {
@@ -38,6 +39,7 @@ class ResponseWrapper
             ...$data,
         ], $response->getStatusCode())
             ->withHeaders($response->headers->all());
+    }
     }
 
 }

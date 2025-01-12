@@ -14,8 +14,8 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        $middleware->append([ExceptJson::class]);
-        $middleware->append([ResponseWrapper::class]);
+        $middleware->api([ExceptJson::class]);
+        $middleware->api([ResponseWrapper::class]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

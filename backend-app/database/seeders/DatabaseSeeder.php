@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Optimum 7',
-            'email' => 'optimum@example.com',
+            'email' => 'optimum7@example.com',
             'access_token' => 'stb2jpdzily110or2pnhig5gex0tfub',
             'client_id' => 'j18lbbiafnopz4bugoryums1dmrbka',
             'client_secret' => '0f36ca8ec08fb6ad6edbd3a006902b9806bde8c3fc6b7c34b9b1dbdc00e8f875',

@@ -15,7 +15,8 @@ class ExceptJson
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $request->headers->set('accept', 'application/json,' . $request->header('accept'));
+        if($request->is('api/*'))
+            $request->headers->set('accept', 'application/json,' . $request->header('accept'));
         return $next($request);
     }
 }

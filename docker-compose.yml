@@ -65,8 +65,9 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - mysql-data:/var/lib/mysql
+      - mysql-data-optimum7:/var/lib/mysql
       - ./backend-app/docker/database/my.cnf:/etc/mysql/my.cnf
+      - './backend-app/docker/database/init-testing-db.sh:/docker-entrypoint-initdb.d/init-testing-db.sh'
     networks:
       - optimum7
 
@@ -75,5 +76,5 @@ networks:
     driver: bridge
 
 volumes:
-  mysql-data:
+  mysql-data-optimum7:
     driver: local
