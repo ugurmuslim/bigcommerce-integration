@@ -48,13 +48,13 @@ docker-compose up --build
 2. Run `docker-compose exec optimum7-app php artisan app:project-init` to make the project ready.
 
 ```sh
-docker-compose exec optimum7-app php artisan app:project-init
+docker exec optimum7-app php artisan app:project-init
 ```
 
 3. You can run tests if you like.
 
 ```sh   
-docker-compose exec app php artisan test
+docker exec optimum7-app php artisan test
 ```
 
 And then you can access the project at [http://localhost:8080](http://localhost:8080)
