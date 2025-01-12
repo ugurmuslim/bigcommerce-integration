@@ -20,7 +20,7 @@ Admin Panel
 
 ## About The Project
 
-Shops are stored in database with access tokens. There will be an already created shop in database.
+Shops are stored in database with access tokens. There will be an already created shop in database. 
 
 There are two jobs which run s every 10 minutes to sync categories, products and variants from all stores in database.
 
@@ -29,6 +29,9 @@ When a shop logs in with correct credentials, they are redirected to Categories 
 Because Bigcommerce can heave multiple categories for products I used hasMany relationship between Category and Product.
 
 You can register new shops and they will be created with same access token as the original store.
+
+Env file is already in the repository for ease of use.
+
 ## Installation
 
 1. Run `docker-compose up --build ` to start the containers.
