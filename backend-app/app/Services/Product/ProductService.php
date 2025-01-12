@@ -54,7 +54,6 @@ class ProductService
                 $product->categories()->sync($categoryIds);
 
                 $variants = $integrationService->getProductVariants($productItem['id']);
-
                 foreach ($variants as $variant) {
                     $product->variants()->updateOrCreate([
                         'bigcommerce_id' => $variant['id'],
