@@ -33,6 +33,8 @@ services:
       - ./backend-app/docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - optimum7
+    command: /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
+
 
   #Nginx Service
   webserver:
@@ -65,7 +67,7 @@ services:
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - mysql-data-optimum7:/var/lib/mysql
+      - mysql-data-optimum7:/bitnami/mysql/data
       - ./backend-app/docker/database/my.cnf:/etc/mysql/my.cnf
       - './backend-app/docker/database/init-testing-db.sh:/docker-entrypoint-initdb.d/init-testing-db.sh'
     networks:

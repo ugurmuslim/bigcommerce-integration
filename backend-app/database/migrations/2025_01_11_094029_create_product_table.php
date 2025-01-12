@@ -17,11 +17,12 @@ return new class extends Migration
             $table->string('bigcommerce_id');
             $table->string('name');
             $table->decimal('price', 10, 2);
-            $table->string('sku')->unique();
+            $table->string('sku');
             $table->timestamps();
 
             $table->index('user_id');
             $table->index('bigcommerce_id');
+            $table->index('sku');
         });
     }
 

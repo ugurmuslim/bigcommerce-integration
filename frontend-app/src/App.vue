@@ -13,6 +13,7 @@ import HelloWorld from './components/HelloWorld.vue'
               <div class="ml-10 flex items-baseline space-x-4">
                 <router-link to="/" class="text-gray-800 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200">Categories</router-link>
                 <router-link to="/login" class="text-gray-800 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200">Login</router-link>
+                <router-link to="/register" class="text-gray-800 px-3 py-2 rounded-md text-sm font-medium hover:bg-gray-200">Register</router-link>
               </div>
             </div>
           </div>

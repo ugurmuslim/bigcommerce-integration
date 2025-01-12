@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 
 class ProjectInit extends Command
 {
@@ -59,11 +60,10 @@ class ProjectInit extends Command
      */
     private function getPendingMigrations()
     {
-        $migrations = DB::select("SELECT * FROM information_schema.tables WHERE table_name = 'migrations'");
-
-        if (empty($migrations)) {
+        // Check if the migrations table exists
+        if (!Schema::hasTable('migrations')) {
             $this->error('Migrations table does not exist.');
-            return false;
+            return true;
         }
 
         $pendingMigrations = DB::table('migrations')->whereNull('batch')->get();

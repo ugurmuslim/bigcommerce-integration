@@ -32,7 +32,7 @@ class ProductResource extends JsonResource
                     'name' => $variant->name,
                     'price' => $variant->price,
                     'sku' => $variant->sku,
-                    'option_values' => $variant->option_values,
+                    'optionValues' => $variant->option_values,
                 ];
             }),
             'created_at' => $this->created_at,

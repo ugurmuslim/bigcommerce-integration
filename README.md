@@ -2,6 +2,14 @@
 
 This project integrates with Bigcommerce store with access tokens and syncs categories, products and variants.
 
+The store's link is 
+
+[https://store-ldaqi0ooo8.mybigcommerce.com](https://store-ldaqi0ooo8.mybigcommerce.com)
+
+Admin Panel 
+
+[https://store-ldaqi0ooo8.mybigcommerce.com/manage/products/](https://store-ldaqi0ooo8.mybigcommerce.com/manage/products/)
+
 ## Tech Stack
 
 - Vue 3
@@ -12,14 +20,15 @@ This project integrates with Bigcommerce store with access tokens and syncs cate
 
 ## About The Project
 
-Shops are stored in database with access tokens. 
+Shops are stored in database with access tokens. There will be an already created shop in database.
 
 There are two jobs which run s every 10 minutes to sync categories, products and variants from all stores in database.
 
-When a shop logs in with correct credentials, they are redirected to Categories page where they can navigate to Products and Variants. When the project starts it will run one time to gather all the data from all the stores in database. 
+When a shop logs in with correct credentials, they are redirected to Categories page where they can navigate to Products and Variants. After following below steps system will sync relevant data from bigcommerce for all stores in db. If wanted, you can click "sync" button to sync data manually. 
 
 Because Bigcommerce can heave multiple categories for products I used hasMany relationship between Category and Product.
 
+You can register new shops and they will be created with same access token as the original store.
 ## Installation
 
 1. Run `docker-compose up --build ` to start the containers.
@@ -34,4 +43,18 @@ docker-compose up --build
 docker-compose exec app php artisan app:project-init
 ```
 
+3. You can run tests if you like.
+
+```sh   
+docker-compose exec app php artisan test
+```
+
+And then you can access the project at [http://localhost:8080](http://localhost:8080)
+
+
+## What can be done furthermore
+
+- Add some webhooks to update already created products
+- While syncing products and variants, there can be failures so a backup plan would be nice.  
+- Add more features like updating products, categories and variants
 

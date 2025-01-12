@@ -75,6 +75,7 @@ onMounted(() => {
         <th class="border border-gray-300 px-4 py-2">Product Name</th>
         <th class="border border-gray-300 px-4 py-2">SKU</th>
         <th class="border border-gray-300 px-4 py-2">Price</th>
+        <th class="border border-gray-300 px-4 py-2">Options</th>
       </tr>
       </thead>
       <tbody>
@@ -83,6 +84,13 @@ onMounted(() => {
         <td class="border border-gray-300 px-4 py-2">{{ product.name }}</td>
         <td class="border border-gray-300 px-4 py-2">{{ variant.sku }}</td>
         <td class="border border-gray-300 px-4 py-2">${{ variant.price }}</td>
+        <td class="border border-gray-300 px-4 py-2">
+          <ul>
+            <li v-for="option in variant.optionValues" :key="option.id">
+              {{ option.option_display_name }}: {{ option.label }}
+            </li>
+          </ul>
+        </td>
       </tr>
       </tbody>
     </table>

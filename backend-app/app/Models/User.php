@@ -25,6 +25,7 @@ class User extends Authenticatable
         'access_token',
         'client_id',
         'client_secret',
+        'store_hash',
     ];
 
     /**

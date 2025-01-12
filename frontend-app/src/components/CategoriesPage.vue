@@ -1,13 +1,33 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import { useToast } from 'vue-toast-notification';
 
 const categories = ref([]);
 const router = useRouter();
 const currentPage = ref(1);
 const totalPages = ref(1);
 const links = ref([]);
-
+const toast = useToast();
+const syncData = async () => {
+  try {
+    const response = await fetch('http://localhost/api/sync', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + localStorage.getItem('auth_token')
+      }});
+    if (response.ok) {
+      toast.success('Data synchronized successfully.', {position: 'top-right', background: '#4CAF50'});
+      fetchCategories();
+    } else {
+      throw new Error('Failed to synchronize data.');
+    }
+  } catch (error) {
+    toast.error('Failed to synchronize data.');
+    // Handle the error here, e.g., show an error message.
+  }
+};
 const fetchCategories = async (page = 1) => {
   try {
     const response = await fetch(`http://localhost/api/categories?page=${page}`, {
@@ -63,6 +83,11 @@ onMounted(() => {
 <template>
   <div class="p-6">
     <h2 class="text-2xl font-bold mb-4">Categories</h2>
+    <button
+      @click="syncData"
+      class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
+      Sync Data
+    </button>
     <table class="table-auto w-full border-collapse border border-gray-300">
       <thead>
       <tr>

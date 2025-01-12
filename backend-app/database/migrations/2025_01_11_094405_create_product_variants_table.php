@@ -24,6 +24,7 @@ return new class extends Migration {
 
             $table->index('product_id');
             $table->index('bigcommerce_id');
+            $table->index('sku');
         });
     }
 

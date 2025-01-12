@@ -47,6 +47,9 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 # Copy existing application directory contents
 COPY . /var/www
 
+COPY ./docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+RUN touch /var/log/supervisor/supervisord.log
+RUN chown www:www /var/log/supervisor/supervisord.log
 
 # Set the correct permissions
 COPY --chown=www:www . /var/www
@@ -56,4 +59,6 @@ USER www
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
-CMD ["php-fpm"]
+#CMD ["php-fpm"]
+
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

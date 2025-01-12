@@ -1,3 +1,4 @@
+.v-toast__item--success{background-color:#439c1e !important}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
