@@ -49,22 +49,36 @@ class ProductService
 
                 $product = Product::updateOrCreate($productData);
 
-                $categoryIds = Category::whereIn('bigcommerce_id', $productItem['categories'])->pluck('id')->toArray();
-
-                $product->categories()->sync($categoryIds);
+                $this->attachCategories($product, $productItem['categories']);
 
                 $variants = $integrationService->getProductVariants($productItem['id']);
-                foreach ($variants as $variant) {
-                    $product->variants()->updateOrCreate([
-                        'bigcommerce_id' => $variant['id'],
-                    ], [
-                        'sku' => $variant['sku'],
-                        'price' => $variant['price'] ? $variant['price'] : $productItem['price'],
-                        'option_values' => $variant['option_values'],
-                    ]);
-                }
+
+                $this->attachVariants($product, $variants, $productItem['price']);
+
                 $query['id:min'] = $productItem['id'] + 1;
             }
         }
     }
+
+    private function attachCategories(Product $product, array $categories)
+    {
+        $categoryIds = Category::whereIn('bigcommerce_id', $categories)->pluck('id')->toArray();
+
+        $product->categories()->sync($categoryIds);
+    }
+
+    private function attachVariants(Product $product, array $variants, $price)
+    {
+        foreach ($variants as $variant) {
+            $product->variants()->updateOrCreate([
+                'bigcommerce_id' => $variant['id'],
+            ], [
+                'sku' => $variant['sku'],
+                'price' => $variant['price'] ? $variant['price'] : $price,
+                'option_values' => $variant['option_values'],
+            ]);
+        }
+    }
+
+
 }
