@@ -9,7 +9,9 @@ const currentPage = ref(1);
 const totalPages = ref(1);
 const links = ref([]);
 const toast = useToast();
+const isLoading = ref(false);
 const syncData = async () => {
+  isLoading.value = true; // Start loading
   try {
     const response = await fetch('http://localhost/api/sync', {
       method: 'POST',
@@ -25,7 +27,8 @@ const syncData = async () => {
     }
   } catch (error) {
     toast.error('Failed to synchronize data.');
-    // Handle the error here, e.g., show an error message.
+  } finally {
+    isLoading.value = false;
   }
 };
 const fetchCategories = async (page = 1) => {
@@ -89,6 +92,9 @@ onMounted(() => {
       class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">
       Sync Categories and Products
     </button>
+    <div v-if="isLoading" class="my-4 text-blue-900" style="font-size: 1.5rem; font-weight: bold;">
+      Products are syncing, please wait...
+    </div>
     <table class="table-auto w-full border-collapse border border-gray-300">
       <thead>
       <tr>
